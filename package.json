@@ -1,15 +1,16 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "school-of-sustainability-alumni-website",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Alumni website for the School of Sustainability",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Travis Hathaway <travis.j.hathaway@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/travishathaway/sos-website/issues"
   },
   "dependencies": {
-    "@fontsource/merriweather": "^5.0.3",
     "@fontsource-variable/montserrat": "^5.0.4",
+    "@fontsource/merriweather": "^5.0.3",
+    "bootstrap": "^5.3.2",
     "gatsby": "^5.12.4",
     "gatsby-plugin-feed": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",
@@ -23,19 +24,18 @@
     "gatsby-transformer-sharp": "^5.12.0",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
+    "react-bootstrap": "^2.9.1",
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://github.com/travishathaway/sos-website",
+  "keywords": [],
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/travishathaway/sos-website.git"
   },
   "scripts": {
     "build": "gatsby build",
