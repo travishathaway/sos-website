@@ -1,9 +1,22 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
+
+import SiteNav from "./site_nav"
+
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
+  const data = useStaticQuery(graphql`
+    query SiteData {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }`)
+
   let header
 
   if (isRootPath) {
@@ -21,15 +34,16 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
-    </div>
+    <>
+      <SiteNav />
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <header className="global-header">{header}</header>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, School of Sustainability
+        </footer>
+      </div>
+    </>
   )
 }
 
