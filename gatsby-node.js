@@ -6,9 +6,13 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { graphql } = require('gatsby')
 
 // Define the template for blog post
-const blogPost = path.resolve(`./src/templates/blog-post.js`)
+const templates = {
+  blog: path.resolve(`./src/templates/blog-post.js`),
+  thesis: path.resolve(`./src/templates/thesis.js`) 
+}
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -19,11 +23,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Get all markdown blog posts sorted by date
   const result = await graphql(`
     {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { frontmatter: { date: ASC } },
+        limit: 1000
+      ) {
         nodes {
           id
           fields {
             slug
+            content_type
           }
         }
       }
@@ -51,7 +59,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       createPage({
         path: post.fields.slug,
-        component: blogPost,
+        component: templates[post.fields.content_type],
         context: {
           id: post.id,
           previousPostId,
@@ -65,16 +73,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 /**
  * @type {import('gatsby').GatsbyNode['onCreateNode']}
  */
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode})
 
     createNodeField({
       name: `slug`,
       node,
       value,
+    })
+
+    createNodeField({
+      name: `content_type`,
+      node,
+      value: value.split('/')[1]
     })
   }
 }
@@ -120,6 +134,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Fields {
       slug: String
+      content_type: String
     }
   `)
 }

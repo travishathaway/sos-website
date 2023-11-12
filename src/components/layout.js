@@ -20,11 +20,7 @@ const Layout = ({ location, title, children }) => {
   let header
 
   if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
+    header = ""
   } else {
     header = (
       <Link className="header-link-home" to="/">
@@ -36,8 +32,8 @@ const Layout = ({ location, title, children }) => {
   return (
     <>
       <SiteNav />
-      <div className="global-wrapper" data-is-root-path={isRootPath}>
-        <header className="global-header">{header}</header>
+      <div className="container-fluid" data-is-root-path={isRootPath}>
+        <header>{header}</header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, School of Sustainability

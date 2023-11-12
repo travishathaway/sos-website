@@ -1,6 +1,11 @@
 ---
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
+slug: blog/my-second-post
+content_type: blog
+featured_image:
+    src: "./salty_egg.jpg"
+    alt: "A salty egg"
 ---
 
 Wow! I love blogging so much already.

@@ -34,7 +34,7 @@ const SiteNav  = ({props}) => {
                 <NavDropdown.Item href="#">Essays</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="#home">Alumni</Nav.Link>
-              <Nav.Link href="#link">New tudents</Nav.Link>
+              <Nav.Link href="#link">New Students</Nav.Link>
             </Nav>
           </Navbar.Collapse>
        </Container>
