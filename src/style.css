@@ -395,13 +395,14 @@ a:focus {
   bottom: initial;
   right: initial;
   left: 10%;
-  top: 5rem;
-  padding: 2rem; 
+  top: 0;
+  padding: 4rem; 
   color: #000;
   background-color: rgba(229, 229, 229, 0.8);
   text-align: left;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   max-width: 60ch;
+  height: 100%;
 }
 
 .front-page-carousel > .btn {
