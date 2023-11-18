@@ -18,6 +18,7 @@ const FeaturedTheses = (props) => {
                   {item.frontmatter.title}
                 </Link>
               </h3>
+              
             </div>
           )
         })}

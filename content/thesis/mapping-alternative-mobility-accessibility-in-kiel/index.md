@@ -6,7 +6,10 @@ description: |
   walkability in cities and uses it to propose a car reductions strategies
   that the city of Kiel can use.
 author: Travis Hathaway
-slug: mapping-alternative-mobility-accessibility-in-kiel
+featured: true
+featured_image:
+    src: "./featured_image.jpg"
+    alt: "The city of Kiel"
 ---
 
 ## Abstract

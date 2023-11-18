@@ -449,6 +449,9 @@ a:focus {
     max-width: initial;
   }
   .front-page-carousel .img-container {
-    height: 500px;
+  }
+
+  .front-page-carousel-caption h1 {
+    font-size: 1.7rem;
   }
 }

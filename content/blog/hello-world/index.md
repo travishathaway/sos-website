@@ -1,12 +1,13 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
-slug: blog/hello-world
-content_type: blog
+date: "2020-10-13"
+description: |
+    This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot
+    more interesting things in the future.
+featured: true
 featured_image:
-    src: "./salty_egg.jpg"
-    alt: "A salty egg"
+    src: "./placeholder-one.jpg"
+    alt: "A placeholder image"
 ---
 
 This is my first post on my new fake blog! How exciting!

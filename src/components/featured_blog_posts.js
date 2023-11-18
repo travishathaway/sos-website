@@ -14,16 +14,17 @@ const FeaturedBlogPosts = (props) => {
           const featured_image = getImage(post.frontmatter.featured_image.src)
           const featured_image_alt = post.frontmatter.featured_image.alt
 
-          console.log(featured_image)
-
           return (
-            <div className="col-6">
-              <div className="card mb-3">
+            <div className="col-12 mb-5">
+              <div className="card m-3">
                 <div className="row g-0">
-                  <div className="col-md-4">
-                    <GatsbyImage image={featured_image} alt={featured_image_alt} aspectRatio={2/1}/>
+                  <div className="col-md-4 col-lg-6 col-xl-4">
+                    <GatsbyImage
+                      image={featured_image}
+                      alt={featured_image_alt}
+                    />
                   </div>
-                  <div className="col-md-8">
+                  <div className="col-md-8 col-lg-6 col-xl-8">
                     <div className="card-body">
                       <h3 className="card-title">
                         <Link to={post.fields.slug} itemProp="url">

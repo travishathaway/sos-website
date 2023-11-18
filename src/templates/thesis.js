@@ -70,12 +70,16 @@ export const pageQuery = graphql`
     previous: markdownRemark(id: { eq: $previousPostId }) {
       frontmatter {
         title
+      }
+      fields {
         slug
       }
     }
     next: markdownRemark(id: { eq: $nextPostId }) {
       frontmatter {
         title
+      }
+      fields {
         slug
       }
     }

@@ -12,10 +12,11 @@ const SiteIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const blogs = data.blogs.nodes
   const theses = data.theses.nodes
+  const featuredItems = data.featuredItems.nodes
 
   return (
     <Layout location={location} title={siteTitle}>
-      <FrontPageCarousel />
+      <FrontPageCarousel items={featuredItems} />
       <FeaturedBlogPosts items={blogs} />
       <div className="container mt-5 mb-5">
         <hr />
@@ -60,7 +61,8 @@ export const pageQuery = graphql`
             src {
               childImageSharp {
                 gatsbyImageData(
-                  aspectRatio: 0.65
+                  aspectRatio: 1.25
+                  width: 600
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
@@ -86,6 +88,50 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+        }
+      }
+    }
+    featuredItems:  allMarkdownRemark(
+        sort: { frontmatter: { date: DESC } },
+        filter: { frontmatter: { featured: { eq: true } } }
+        limit: 3
+      )
+    {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          featured_image {
+            src {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 2
+                  width: 1800
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            alt
+          }
+          featured_image_small: featured_image {
+            src {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 0.75
+                  width: 400
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            alt
+          }
         }
       }
     }
