@@ -1,4 +1,6 @@
 # TODO
 
-- [ ] Create a new field on thesis and blog for `featured`; this will put it on the front page
-  - [ ] Maybe it
+## 2023-11-25
+
+- [ ] Create index pages for both thesis and blog posts
+
