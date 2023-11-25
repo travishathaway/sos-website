@@ -70,6 +70,19 @@ export const pageQuery = graphql`
             }
             alt
           }
+          featured_image_narrow: featured_image {
+            src {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 0.75
+                  width: 600
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            alt
+          }
         }
       }
     }
@@ -119,18 +132,29 @@ export const pageQuery = graphql`
             }
             alt
           }
-          featured_image_small: featured_image {
+          featured_image_medium: featured_image {
             src {
               childImageSharp {
                 gatsbyImageData(
-                  aspectRatio: 0.75
-                  width: 400
+                  aspectRatio: 1.25
+                  width: 1200
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
               }
             }
-            alt
+          }
+          featured_image_small: featured_image {
+            src {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 0.75
+                  width: 800
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
           }
         }
       }

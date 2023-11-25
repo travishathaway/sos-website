@@ -11,18 +11,27 @@ const FeaturedBlogPosts = (props) => {
       <h2 className="mt-5">Recent blog posts</h2>
       <div className="row mt-5">
         {items.map(post => {
-          const featured_image = getImage(post.frontmatter.featured_image.src)
-          const featured_image_alt = post.frontmatter.featured_image.alt
+          const featuredImage = getImage(post.frontmatter.featured_image.src)
+          const featuredImageAlt = post.frontmatter.featured_image.alt
+          const featuredImageNarrow = getImage(post.frontmatter.featured_image_narrow.src)
 
           return (
             <div className="col-12 mb-5">
               <div className="card m-3">
                 <div className="row g-0">
                   <div className="col-md-4 col-lg-6 col-xl-4">
-                    <GatsbyImage
-                      image={featured_image}
-                      alt={featured_image_alt}
-                    />
+                    <div className="d-xs-block d-md-none d-lg-block">
+                      <GatsbyImage
+                        image={featuredImage}
+                        alt={featuredImageAlt}
+                      />
+                    </div>
+                    <div className="d-none d-md-block d-lg-none">
+                      <GatsbyImage
+                        image={featuredImageNarrow}
+                        alt={featuredImageAlt}
+                      />
+                    </div>
                   </div>
                   <div className="col-md-8 col-lg-6 col-xl-8">
                     <div className="card-body">

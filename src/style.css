@@ -416,7 +416,7 @@ a:focus {
 
 .front-page-carousel .img-container {
   width: 100%;
-  min-height: 10rem;
+  min-height: 15rem;
   max-height: 35rem;
   overflow: hidden;
 }
@@ -447,8 +447,6 @@ a:focus {
     height: 100%;
     padding: 3rem;
     max-width: initial;
-  }
-  .front-page-carousel .img-container {
   }
 
   .front-page-carousel-caption h1 {

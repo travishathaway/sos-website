@@ -13,21 +13,28 @@ const FrontPageCarousel = (props) => {
         {items.map(item => {
           const featuredImage = getImage(item.frontmatter.featured_image.src)
           const featuredImageSmall = getImage(item.frontmatter.featured_image_small.src)
-          const featured_image_alt = item.frontmatter.featured_image.alt
+          const featuredImageMedium = getImage(item.frontmatter.featured_image_medium.src)
+          const featuredImageAlt = item.frontmatter.featured_image.alt
 
           return (
             <Carousel.Item>
               <div className="img-container">
-                <div className="d-none d-sm-block">
+                <div className="d-none d-lg-block">
                   <GatsbyImage
                     image={featuredImage}
-                    alt={featured_image_alt}
+                    alt={featuredImageAlt}
                   />
                 </div>
-                <div className="d-block d-sm-none">
+                <div className="d-none d-md-block d-lg-none">
+                  <GatsbyImage
+                    image={featuredImageMedium}
+                    alt={featuredImageAlt}
+                  />
+                </div>
+                <div className="d-block d-md-none">
                   <GatsbyImage
                     image={featuredImageSmall}
-                    alt={featured_image_alt}
+                    alt={featuredImageAlt}
                   />
                 </div>
               </div>
