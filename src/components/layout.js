@@ -17,23 +17,10 @@ const Layout = ({ location, title, children }) => {
       }
     }`)
 
-  let header
-
-  if (isRootPath) {
-    header = ""
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
-
   return (
     <>
       <SiteNav />
       <div className="container-fluid" data-is-root-path={isRootPath}>
-        <header>{header}</header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, School of Sustainability

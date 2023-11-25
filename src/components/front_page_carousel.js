@@ -44,7 +44,7 @@ const FrontPageCarousel = (props) => {
                   {item.frontmatter.description}
                 </p>
                 <Link to={item.fields.slug} className="btn btn-primary">
-                  Read more &nbsp;<i className="bi bi-arrow-right-circle-fill"></i>
+                  Read more &nbsp;<i className="bi bi-arrow-right"></i>
                 </Link>
               </Carousel.Caption>
             </Carousel.Item>
